@@ -13,13 +13,13 @@
     <div ng-controller="msgController">
 
       {{name}} says:<br/>
-      {{getMessage()}}
-      
-<br/><br/>
+      {{getMessage()}}<br/><br/>
+      <button ng-click="toggleBulbOn()"> Turn On/Off </button>
+<br/>
+<br/>
+<img src="./assets/images/{{isTurnedOn}}.png" width="200" />
 
-      <div>
-        <button ng-click="toggleBulbOn()"> Turn On/Off </button>
-      </div>
+      
     </div>
     
 </body>
