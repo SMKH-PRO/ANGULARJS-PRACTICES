@@ -1,26 +1,42 @@
 <!DOCTYPE html>
-<html ng-app="ngRepeat"  lang="en">
+<html ng-app="ngRepeat" lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="./assets/js/angular.min.js"></script>
-    <script src="./index.js"></script>
-    
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./assets/js/angular.min.js"></script>
+  <script src="./index.js"></script>
+
 </head>
-<body>
+
+<body ng-controller="ngRepeatController">
   <h1>NG-REPEAT ANGULAR</h1>
-    <div ng-controller="ngRepeatController">
-   
+  <div>
 
 
 
-      <ol>
-        <li  ng-repeat="user in users">
-         <span title={{user.email}}>{{user.name}} </span>
-        </li>
-      </ol>
-    </div>
-    
+ search:
+  <input ng-model="search" /><br/>
+    <ol>
+      <li ng-repeat="user in users | filter : search">
+        <span title={{user.email}}>{{user.name}} </span>
+        <!-- <button ng-click="deleteUser({{user.email}})" >delete</button> -->
+
+      </li>
+    </ol>
+  </div>
+
+ 
+<br/>
+  Name:
+  <input ng-model="userName" />
+
+  Email:
+  <input ng-model="userEmail" />
+  <p style="color:red">{{errorMsg}}</p>
+  <button ng-click="addUser()">Add User</button>
+
 </body>
+
 </html>
